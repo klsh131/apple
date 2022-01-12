@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<script>
+function search()
+{
+   var apple=document.fsearch.tapple.value;
+   var apples=document.fsearch.elements["tapples[]"];
+   var ids=document.fsearch.elements["tids[]"];
+   var tarr=new Array;
+   var parr=new Array;
+
+   for (i=0;i<20;i++)
+   {
+      tarr[i]=ids[i].value;
+      parr[i]=apples[i].value;
+   }
+
+   //----------在這裡開始寫尋找最小的程式碼----------
+
+   min=0;
+
+   for (i=0;i<20;i++)
+   {
+      alert( "第" + (i+1) + "組" + tarr[i] + "號 " + parr[i] + "  v.s.  第" + (min+1) + "組" + tarr[min] + "號 " + parr[min] + "←目前最接近 " + apple + "");
+      if ( Math.abs(parr[i]-apple) <= Math.abs(parr[min]-apple) )
+      {
+         min=i;
+      }
+   }
+
+   alert("最接近 " + apple + " 的是 → 第" + (min+1) + "組" + tarr[min] + "號 " + parr[min] );
+
+   //----------在這裡結束寫尋找最小的程式碼----------
+
+}
+
+function searchq()
+{
+   var apple=document.fsearch.tapple.value;
+   var apples=document.fsearch.elements["tapples[]"];
+   var ids=document.fsearch.elements["tids[]"];
+   var tarr=new Array;
+   var parr=new Array;
+
+   for (i=0;i<20;i++)
+   {
+      tarr[i]=ids[i].value;
+      parr[i]=apples[i].value;
+   }
+
+   min=0;
+
+   for (i=0;i<20;i++)
+   {
+      if ( Math.abs(parr[i]-apple) <= Math.abs(parr[min]-apple) )
+      {
+         min=i;
+      }
+   }
+
+   alert("最接近 " + apple + " 的是 → 第" + (min+1) + "組" + tarr[min] + "號 " + parr[min] );
+
+}
+</script>
+</head>
+
+<body>
+<form name="fsearch">
+2021/12/31 Apple <input type="text" name="tapple" value="177.57" size="10"> 
+<input type="button" name="bstart" value="最接近的一組是..." onclick="search()">
+<input type="button" name="bstart" value="直接看答案" onclick="searchq()"><br><br>
+01 <input type="text" name="tids[]" value="01" size="10"> <input type="text" name="tapples[]" value="151.28" size="10"><br>
+02 <input type="text" name="tids[]" value="02" size="10"> <input type="text" name="tapples[]" value="146.37" size="10"><br>
+03 <input type="text" name="tids[]" value="03" size="10"> <input type="text" name="tapples[]" value="160.58" size="10"><br>
+04 <input type="text" name="tids[]" value="04" size="10"> <input type="text" name="tapples[]" value="145" size="10"><br>
+05 <input type="text" name="tids[]" value="05" size="10"> <input type="text" name="tapples[]" value="154.65" size="10"><br>
+06 <input type="text" name="tids[]" value="06" size="10"> <input type="text" name="tapples[]" value="350" size="10"><br>
+07 <input type="text" name="tids[]" value="07" size="10"> <input type="text" name="tapples[]" value="158.68" size="10"><br>
+08 <input type="text" name="tids[]" value="08" size="10"> <input type="text" name="tapples[]" value="0" size="10"><br>
+09 <input type="text" name="tids[]" value="09" size="10"> <input type="text" name="tapples[]" value="0" size="10"><br>
+10 <input type="text" name="tids[]" value="10" size="10"> <input type="text" name="tapples[]" value="160" size="10"><br>
+11 <input type="text" name="tids[]" value="11" size="10"> <input type="text" name="tapples[]" value="143.01" size="10"><br>
+12 <input type="text" name="tids[]" value="12" size="10"> <input type="text" name="tapples[]" value="116.12" size="10"><br>
+13 <input type="text" name="tids[]" value="13" size="10"> <input type="text" name="tapples[]" value="115.5" size="10"><br>
+14 <input type="text" name="tids[]" value="14" size="10"> <input type="text" name="tapples[]" value="14000" size="10"><br>
+15 <input type="text" name="tids[]" value="15" size="10"> <input type="text" name="tapples[]" value="158.6" size="10"><br>
+16 <input type="text" name="tids[]" value="16" size="10"> <input type="text" name="tapples[]" value="157.8" size="10"><br>
+17 <input type="text" name="tids[]" value="17" size="10"> <input type="text" name="tapples[]" value="0" size="10"><br>
+18 <input type="text" name="tids[]" value="18" size="10"> <input type="text" name="tapples[]" value="37.64" size="10"><br>
+19 <input type="text" name="tids[]" value="19" size="10"> <input type="text" name="tapples[]" value="0" size="10"><br>
+20 <input type="text" name="tids[]" value="20" size="10"> <input type="text" name="tapples[]" value="0" size="10"><br>
+</form>
+</body>
+
+</html>
